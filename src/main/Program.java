@@ -74,22 +74,20 @@ public class Program {
             }
         } while (line != null);
         Memory[] arrayMemories = memories.toArray(new Memory[0]);
-        //Si es un archivo de memorias se setea con esas memorias
+        // If it is a memory file, it is set with those memories
         if (fileType.equals(FILE_TYPE.MEMORY)) {
             head.setMemory(arrayMemories);
         } else {
-            //No se definio en el archivo la memoria usada, así que se pone lo que contenia de espacio
+            // The memory used was not defined in the file, so what contained space was written
             int i = 0;
             while (i < head.getMemory().length && i < arrayMemories.length) {
                 head.setStatus(i, arrayMemories[i].getStatus());
                 if (arrayMemories[i].getStatus().equals("EU")) {
-                    //Poner como memoria usada la cantidad, ya que en los archivos que venian en el enunciado no 
-                    //definia la memoria solicitada
                     head.getMemory()[i].setUsedMemory(head.getMemory()[i].getQuantity());
-                    //Se pone como procedo el ID del proceso
+                    // As a process, we add the process ID
                     head.getMemory()[i].setProcessID(i + 1);
                 } else {
-                    //Por el contrario al liberar memoria se pone en 0 y el proceso en 0
+                    // On the contrary, when freeing memory it is set to 0 and the process to 0
                     head.getMemory()[i].setProcessID(0);
                     head.getMemory()[i].setUsedMemory(0);
                 }

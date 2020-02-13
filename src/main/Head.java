@@ -103,14 +103,14 @@ public class Head {
         for (int i = 0; i < memory.length; i++) {
             int quantity = memory[i].getQuantity();
             if (memoryToUse <= quantity
-                    && //Que sea menor o igual
+                    && // That is less than or equal
                     (quantity - memoryToUse < diference || diference == -1)
-                    && //Que la diferencia sea menor a la diferencia anterior
-                    //Si es menos uno es por que no se ha asignado ninguno
+                    && // That the difference is minus than the previous difference
+                    // If it is minus one, it is because none has been assigned
                     memory[i].getStatus().equals("LI")) { //que este libre el bloque
                 diference = quantity - memoryToUse;
                 pos = i;
-                if (diference == 0) {//Si es cero ya ese esta perfecto
+                if (diference == 0) { // If it is zero, it's perfect
                     break;
                 }
             }
@@ -120,7 +120,7 @@ public class Head {
 
     @Override
     public String toString() {
-        String result = "Memoria/Dis" + "\t | \t" + "Estado" + "\t | \t" + "Memory Usada" + "\t | \t" + "ID/process\n";
+        String result = "Memory/Dis" + "\t | \t" + "Status" + "\t | \t" + "Memory used" + "\t | \t" + "ID/process\n";
         for (int i = 0; i < memory.length; i++) {
             result += memory[i].toString() + "\n";
         }
