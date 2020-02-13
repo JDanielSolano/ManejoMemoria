@@ -17,7 +17,7 @@ public class Main {
         // To keep it open
         while (true) {
             try {
-                int value = Integer.valueOf(JOptionPane.showInputDialog(null, "Which option want to use? \n 1. Load information\n 2. Allocate memory\n 3. Print memory\n 4. Exit", "Application selection", JOptionPane.QUESTION_MESSAGE));
+                int value = Integer.valueOf(JOptionPane.showInputDialog(null, "Which option want to use? \n 1. Load information\n 2. Allocate memory\n 3. Print memory\n 4. Exit", "Memory Management", JOptionPane.QUESTION_MESSAGE));
                 switch (value) {
                     case (1):
                         loadFiles();
@@ -52,7 +52,7 @@ public class Main {
         int processID = -1;
         while (true) {
             try {
-                processID = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the process code, or -1 to cancel", "Application selection", JOptionPane.QUESTION_MESSAGE));
+                processID = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the process code, or -1 to cancel", "Memory Management", JOptionPane.QUESTION_MESSAGE));
                 if (processID <= 0 && processID != -1) {
                     JOptionPane.showMessageDialog(null, "The process must be positive numeric", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -67,7 +67,7 @@ public class Main {
         int memoryToUse = 0;
         while (true) {
             try {
-                memoryToUse = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the amount of memory", "Application selection", JOptionPane.QUESTION_MESSAGE));
+                memoryToUse = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the amount of memory", "Memory Management", JOptionPane.QUESTION_MESSAGE));
                 if (memoryToUse <= 0 && memoryToUse != -1) {
                     JOptionPane.showMessageDialog(null, "Invalid value, must be positive numeric", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -83,7 +83,7 @@ public class Main {
         int programType = 0;
         while (true) {
             try {
-                programType = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the algorithm\n 1. First Adjustment\n 2. Worst Adjustment\n 3. Best Adjustment\n 4. Cancel", "Application selection", JOptionPane.QUESTION_MESSAGE));
+                programType = Integer.valueOf(JOptionPane.showInputDialog(null, "Enter the algorithm\n 1. First Adjustment\n 2. Worst Adjustment\n 3. Best Adjustment\n 4. Cancel", "Memory Management", JOptionPane.QUESTION_MESSAGE));
                 if (programType < 1 && programType > 4) {
                     JOptionPane.showMessageDialog(null, "Invalid selection", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -114,7 +114,7 @@ public class Main {
     private void loadFiles() {
         while (true) {
             try {
-                int value = Integer.valueOf(JOptionPane.showInputDialog(null, "Which file do you want to load? \n 1. Memory file\n 2. State file\n 3. Cancel\n", "Application selection", JOptionPane.QUESTION_MESSAGE));
+                int value = Integer.valueOf(JOptionPane.showInputDialog(null, "Which file do you want to load? \n 1. Memory file\n 2. State file\n 3. Cancel\n", "Memory Management", JOptionPane.QUESTION_MESSAGE));
                 JFileChooser fileChooser = new JFileChooser();
                 switch (value) {
                     case (1):
